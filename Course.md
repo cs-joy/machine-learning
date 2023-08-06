@@ -4,4 +4,6 @@
 
 [IBM](https://www.ibm.com/topics/machine-learning)
 
+[Oracle](https://www.oracle.com/hk/artificial-intelligence/machine-learning/what-is-machine-learning/)
+
 [Coursera](https://www.coursera.org/learn/machine-learning)
