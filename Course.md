@@ -7,3 +7,6 @@
 [Oracle](https://www.oracle.com/hk/artificial-intelligence/machine-learning/what-is-machine-learning/)
 
 [Coursera](https://www.coursera.org/learn/machine-learning)
+
+
+- [Google Developers Content](https://www.youtube.com/watch?v=cKxRvEZd3Mw)
