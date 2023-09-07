@@ -1,0 +1,1 @@
+[Definition of KNN algorithm](https://www.ibm.com/topics/knn#:~:text=Next%20steps-,K%2DNearest%20Neighbors%20Algorithm,of%20an%20individual%20data%20point.)
