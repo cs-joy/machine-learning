@@ -9,4 +9,7 @@
 [Coursera](https://www.coursera.org/learn/machine-learning)
 
 
+[Stanford University](https://www.youtube.com/watch?v=jGwO_UgTS7I&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU)
+
+
 - [Google Developers Content](https://www.youtube.com/watch?v=cKxRvEZd3Mw)
