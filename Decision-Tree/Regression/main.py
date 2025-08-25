@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeRegressor, plot_tree
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
 
 # Create dataset
 dataset_dict = {
@@ -25,6 +28,8 @@ df = df[column_order]
 
 # Split features and target
 X, y = df.drop('Num_Players', axis=1), df['Num_Players']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
 
 def calculate_split_mse(X_train, y_train, feature_name, split_point):
     # Create DataFrame and sort by feature
@@ -63,4 +68,73 @@ def calculate_split_mse(X_train, y_train, feature_name, split_point):
 
 # Example usage:
 calculate_split_mse(X_train, y_train, 'Temperature', 73.5)
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
+
+def evaluate_all_splits(X_train, y_train):
+    """Evaluate all possible split points using midpoints for all features"""
+    results = []
+
+    for feature in X_train.columns:
+        data = pd.DataFrame({'feature': X_train[feature], 'y_actual': y_train})
+        splits = [(a + b)/2 for a, b in zip(sorted(data['feature'].unique())[:-1], 
+                                          sorted(data['feature'].unique())[1:])]
+
+        for split in splits:
+            left_mask = data['feature'] <= split
+            n_left = sum(left_mask)
+
+            if not (0 < n_left < len(data)): continue
+
+            left_mean = data[left_mask]['y_actual'].mean()
+            right_mean = data[~left_mask]['y_actual'].mean()
+
+            left_mse = ((data[left_mask]['y_actual'] - left_mean) ** 2).mean()
+            right_mse = ((data[~left_mask]['y_actual'] - right_mean) ** 2).mean()
+
+            weighted_mse = (n_left * left_mse + (len(data) - n_left) * right_mse) / len(data)
+
+            results.append({'Feature': feature, 'Split_Point': split, 'Weighted_MSE': weighted_mse})
+
+    return pd.DataFrame(results).round(2)
+
+# Example usage:
+results = evaluate_all_splits(X_train, y_train)
+print(results)
+
+# Train the model
+regr = DecisionTreeRegressor(random_state=42)
+regr.fit(X_train, y_train)
+
+# Visualize the decision tree
+plt.figure(figsize=(26,8))
+plot_tree(regr, feature_names=X.columns, filled=True, rounded=True, impurity=False, fontsize=16, precision=2)
+plt.tight_layout()
+plt.show()
+
+#################
+# Compute the cost-complexity pruning path
+tree = DecisionTreeRegressor(random_state=42)
+effective_alphas = tree.cost_complexity_pruning_path(X_train, y_train).ccp_alphas
+impurities = tree.cost_complexity_pruning_path(X_train, y_train).impurities
+
+# Function to count leaf nodes
+count_leaves = lambda tree: sum(tree.tree_.children_left[i] == tree.tree_.children_right[i] == -1 for i in range(tree.tree_.node_count))
+
+# feature scaling
+sc = StandardScaler()
+X_train_scaled = sc.fit_transform(X_train)
+X_test_scaled = sc.transform(X_test)
+
+# Train trees and count leaves for each complexity parameter
+leaf_counts = [count_leaves(DecisionTreeRegressor(random_state=0, ccp_alpha=alpha).fit(X_train_scaled, y_train)) for alpha in effective_alphas]
+
+# Create DataFrame with analysis results
+pruning_analysis = pd.DataFrame({
+    'total_leaf_impurities': impurities,
+    'leaf_count': leaf_counts,
+    'cost_function': [f"{imp:.3f} + {leaves}α" for imp, leaves in zip(impurities, leaf_counts)],
+    'effective_α': effective_alphas
+})
+
+print(pruning_analysis)
+
+
