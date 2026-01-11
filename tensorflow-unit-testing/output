@@ -1,0 +1,286 @@
+2026-01-11 13:14:19.455671: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2026-01-11 13:14:19.529516: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-01-11 13:14:20.974024: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/keras/src/export/tf2onnx_lib.py:8: FutureWarning: In the future `np.object` will be defined as the corresponding NumPy scalar.
+  if not hasattr(np, "object"):
+2026-01-11 13:14:21.223499: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Running tests under Python 3.13.11: /home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/bin/python3
+[ RUN      ] ExampleModelTest.test_basic
+/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/keras/src/layers/core/dense.py:106: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+I0111 13:14:21.298142 140612314489344 summary_utils.py:389] Model: "sequential"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                     ┃ Output Shape             ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ dense (Dense)                    │ (None, 64)               │           640 │
+├──────────────────────────────────┼──────────────────────────┼───────────────┤
+│ dense_1 (Dense)                  │ (None, 32)               │         2,080 │
+├──────────────────────────────────┼──────────────────────────┼───────────────┤
+│ dense_2 (Dense)                  │ (None, 1)                │            33 │
+└──────────────────────────────────┴──────────────────────────┴───────────────┘
+ Total params: 2,753 (10.75 KB)
+ Trainable params: 2,753 (10.75 KB)
+ Non-trainable params: 0 (0.00 B)
+
+Epoch 1/2
+/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:171: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+1/2 ━━━━━━━━━━━━━━━━━━━━ 0s 747ms/step - loss: 974.3849 - mae: 30.5494 - mse: 974.3849/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:171: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+2/2 ━━━━━━━━━━━━━━━━━━━━ 1s 197ms/step - loss: 25377.7871 - mae: 120.1767 - mse: 25377.7871 - val_loss: 978.6589 - val_mae: 30.9784 - val_mse: 978.6589
+Epoch 2/2
+1/2 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step - loss: 873.8683 - mae: 29.0670 - mse: 873.8682/2 ━━━━━━━━━━━━━━━━━━━━ 0s 29ms/step - loss: 507.4149 - mae: 19.2446 - mse: 507.4149 - val_loss: 50.8253 - val_mae: 5.5973 - val_mse: 50.8253
+/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:171: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 144ms/step - loss: 181.6067 - mae: 11.1958 - mse: 181.61/1 ━━━━━━━━━━━━━━━━━━━━ 0s 166ms/step - loss: 181.6067 - mae: 11.1958 - mse: 181.6067
+1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 57ms/step
+INFO:tensorflow:time(__main__.ExampleModelTest.test_basic): 1.41s
+I0111 13:14:22.641651 140612314489344 test_util.py:2634] time(__main__.ExampleModelTest.test_basic): 1.41s
+[       OK ] ExampleModelTest.test_basic
+[ RUN      ] ExampleModelTest.test_session
+[  SKIPPED ] ExampleModelTest.test_session - Not a test.
+[ RUN      ] LinearBlockFullTest.test_basic
+WARNING:tensorflow:
+The following Variables were used a Lambda layer's call (tf.linalg.matmul), but
+are not present in its tracked objects:
+  <tf.Variable 'linear_block_full/variable:0' shape=(32, 3) dtype=float32>
+It is possible that this is intended behavior, but it is more likely
+an omission. This is a strong indication that this layer should be
+formulated as a subclassed Layer rather than a Lambda layer.
+W0111 13:14:22.669606 140612314489344 core.py:1424] 
+The following Variables were used a Lambda layer's call (tf.linalg.matmul), but
+are not present in its tracked objects:
+  <tf.Variable 'linear_block_full/variable:0' shape=(32, 3) dtype=float32>
+It is possible that this is intended behavior, but it is more likely
+an omission. This is a strong indication that this layer should be
+formulated as a subclassed Layer rather than a Lambda layer.
+WARNING:tensorflow:
+The following Variables were used a Lambda layer's call (tf.__operators__.add), but
+are not present in its tracked objects:
+  <tf.Variable 'linear_block_full/variable_1:0' shape=(3,) dtype=float32>
+It is possible that this is intended behavior, but it is more likely
+an omission. This is a strong indication that this layer should be
+formulated as a subclassed Layer rather than a Lambda layer.
+W0111 13:14:22.674063 140612314489344 core.py:1424] 
+The following Variables were used a Lambda layer's call (tf.__operators__.add), but
+are not present in its tracked objects:
+  <tf.Variable 'linear_block_full/variable_1:0' shape=(3,) dtype=float32>
+It is possible that this is intended behavior, but it is more likely
+an omission. This is a strong indication that this layer should be
+formulated as a subclassed Layer rather than a Lambda layer.
+[  FAILED  ] LinearBlockFullTest.test_basic
+INFO:tensorflow:time(__main__.LinearBlockFullTest.test_basic): 0.04s
+I0111 13:14:22.681343 140612314489344 test_util.py:2634] time(__main__.LinearBlockFullTest.test_basic): 0.04s
+[ RUN      ] LinearBlockFullTest.test_output
+WARNING:tensorflow:
+The following Variables were used a Lambda layer's call (tf.linalg.matmul_1), but
+are not present in its tracked objects:
+  <tf.Variable 'linear_block_full_1/variable_2:0' shape=(4, 2) dtype=float32>
+It is possible that this is intended behavior, but it is more likely
+an omission. This is a strong indication that this layer should be
+formulated as a subclassed Layer rather than a Lambda layer.
+W0111 13:14:22.707159 140612314489344 core.py:1424] 
+The following Variables were used a Lambda layer's call (tf.linalg.matmul_1), but
+are not present in its tracked objects:
+  <tf.Variable 'linear_block_full_1/variable_2:0' shape=(4, 2) dtype=float32>
+It is possible that this is intended behavior, but it is more likely
+an omission. This is a strong indication that this layer should be
+formulated as a subclassed Layer rather than a Lambda layer.
+WARNING:tensorflow:
+The following Variables were used a Lambda layer's call (tf.__operators__.add_1), but
+are not present in its tracked objects:
+  <tf.Variable 'linear_block_full_1/variable_3:0' shape=(2,) dtype=float32>
+It is possible that this is intended behavior, but it is more likely
+an omission. This is a strong indication that this layer should be
+formulated as a subclassed Layer rather than a Lambda layer.
+W0111 13:14:22.711256 140612314489344 core.py:1424] 
+The following Variables were used a Lambda layer's call (tf.__operators__.add_1), but
+are not present in its tracked objects:
+  <tf.Variable 'linear_block_full_1/variable_3:0' shape=(2,) dtype=float32>
+It is possible that this is intended behavior, but it is more likely
+an omission. This is a strong indication that this layer should be
+formulated as a subclassed Layer rather than a Lambda layer.
+[  FAILED  ] LinearBlockFullTest.test_output
+INFO:tensorflow:time(__main__.LinearBlockFullTest.test_output): 0.04s
+I0111 13:14:22.717892 140612314489344 test_util.py:2634] time(__main__.LinearBlockFullTest.test_output): 0.04s
+[ RUN      ] LinearBlockFullTest.test_session
+[  SKIPPED ] LinearBlockFullTest.test_session - Not a test.
+[ RUN      ] LinearBlockTest.test_output
+[  FAILED  ] LinearBlockTest.test_output
+INFO:tensorflow:time(__main__.LinearBlockTest.test_output): 0.03s
+I0111 13:14:22.749891 140612314489344 test_util.py:2634] time(__main__.LinearBlockTest.test_output): 0.03s
+[ RUN      ] LinearBlockTest.test_output_ones
+[  FAILED  ] LinearBlockTest.test_output_ones
+INFO:tensorflow:time(__main__.LinearBlockTest.test_output_ones): 0.02s
+I0111 13:14:22.773653 140612314489344 test_util.py:2634] time(__main__.LinearBlockTest.test_output_ones): 0.02s
+[ RUN      ] LinearBlockTest.test_session
+[  SKIPPED ] LinearBlockTest.test_session - Not a test.
+[ RUN      ] LinearBlockTest.test_shape
+INFO:tensorflow:time(__main__.LinearBlockTest.test_shape): 0.02s
+I0111 13:14:22.794481 140612314489344 test_util.py:2634] time(__main__.LinearBlockTest.test_shape): 0.02s
+[       OK ] LinearBlockTest.test_shape
+[ RUN      ] LinearBlockTest.test_shape_default
+INFO:tensorflow:time(__main__.LinearBlockTest.test_shape_default): 0.02s
+I0111 13:14:22.819069 140612314489344 test_util.py:2634] time(__main__.LinearBlockTest.test_shape_default): 0.02s
+[       OK ] LinearBlockTest.test_shape_default
+[ RUN      ] LinearBlockTest.test_shape_multidim
+INFO:tensorflow:time(__main__.LinearBlockTest.test_shape_multidim): 0.02s
+I0111 13:14:22.841964 140612314489344 test_util.py:2634] time(__main__.LinearBlockTest.test_shape_multidim): 0.02s
+[       OK ] LinearBlockTest.test_shape_multidim
+======================================================================
+ERROR: test_basic (__main__.LinearBlockFullTest.test_basic)
+LinearBlockFullTest.test_basic
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/example_test.py", line 36, in test_basic
+    testing_utils.layer_test(example.LinearBlockFull, input_shape=(4, 32))
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 2282, in decorated
+    result = func(*args, **kwargs)
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/keras/testing_utils.py", line 221, in layer_test
+    layer.compute_output_shape(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        tensor_shape.TensorShape(input_shape)).as_list())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/keras/src/layers/layer.py", line 1193, in compute_output_shape
+    raise self._not_implemented_error(
+    ...<2 lines>...
+    )
+NotImplementedError: Layer LinearBlockFull does not have a `compute_output_shape` method implemented. Should implement `def compute_output_shape(self, input_shape)`.
+
+======================================================================
+ERROR: test_output (__main__.LinearBlockFullTest.test_output)
+LinearBlockFullTest.test_output
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/example_test.py", line 40, in test_output
+    testing_utils.layer_test(
+    ~~~~~~~~~~~~~~~~~~~~~~~~^
+                example.LinearBlockFull,
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+                expected_output_dtype = 'float32'
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            )
+            ^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 2282, in decorated
+    result = func(*args, **kwargs)
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/keras/testing_utils.py", line 221, in layer_test
+    layer.compute_output_shape(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        tensor_shape.TensorShape(input_shape)).as_list())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/keras/src/layers/layer.py", line 1193, in compute_output_shape
+    raise self._not_implemented_error(
+    ...<2 lines>...
+    )
+NotImplementedError: Layer LinearBlockFull does not have a `compute_output_shape` method implemented. Should implement `def compute_output_shape(self, input_shape)`.
+
+======================================================================
+ERROR: test_output_ones (__main__.LinearBlockTest.test_output_ones)
+LinearBlockTest.test_output_ones
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/unittest/mock.py", line 1426, in patched
+    return func(*newargs, **newkeywargs)
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/example_test.py", line 95, in test_output_ones
+    self.assertAllClose(output, expected_output, atol='1e-4')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 1756, in decorated
+    return f(*args, **kwds)
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 3377, in assertAllClose
+    self._assertAllCloseRecursive(a, b, rtol=rtol, atol=atol, msg=msg)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 3333, in _assertAllCloseRecursive
+    self._assertArrayLikeAllClose(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        a,
+        ^^
+    ...<3 lines>...
+        msg=("Mismatched value: a%s is different from b%s. %s" %
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             (path_str, path_str, msg)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 3243, in _assertArrayLikeAllClose
+    if not np.allclose(a, b, rtol=rtol, atol=atol):
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/numpy/_core/numeric.py", line 2363, in allclose
+    res = all(isclose(a, b, rtol=rtol, atol=atol, equal_nan=equal_nan))
+              ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/numpy/_core/numeric.py", line 2481, in isclose
+    if not (np.all(np.isfinite(atol)) and np.all(np.isfinite(rtol))):
+                   ~~~~~~~~~~~^^^^^^
+TypeError: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe'' : Error: a has <class 'tensorflow.python.framework.ops.EagerTensor'>, but b has <class 'numpy.ndarray'>. 
+
+======================================================================
+FAIL: test_output (__main__.LinearBlockTest.test_output)
+LinearBlockTest.test_output
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/example_test.py", line 84, in test_output
+    self.assertAllClose(output, expected_output, atol=1e-4)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 1756, in decorated
+    return f(*args, **kwds)
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 3377, in assertAllClose
+    self._assertAllCloseRecursive(a, b, rtol=rtol, atol=atol, msg=msg)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 3333, in _assertAllCloseRecursive
+    self._assertArrayLikeAllClose(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        a,
+        ^^
+    ...<3 lines>...
+        msg=("Mismatched value: a%s is different from b%s. %s" %
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             (path_str, path_str, msg)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/tensorflow/python/framework/test_util.py", line 3270, in _assertArrayLikeAllClose
+    np.testing.assert_allclose(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        a, b, rtol=rtol, atol=atol, err_msg="\n".join(msgs), equal_nan=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1768, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/home/nullchunk/csjoyGitHub/machine-learning/tensorflow-unit-testing/venv/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-06, atol=0.0001
+Mismatched value: a is different from b. 
+not close where = (array([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]), array([0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3]))
+not close lhs = [ 0.17882194  0.04083173 -0.05494086 -0.18999408  0.17882194  0.04083173
+ -0.05494086 -0.18999408  0.17882194  0.04083173 -0.05494086 -0.18999408]
+not close rhs = [ 0.125  -0.0576  0.0513 -0.0305  0.125  -0.0576  0.0513 -0.0305  0.125
+ -0.0576  0.0513 -0.0305]
+not close dif = [0.05382194 0.09843173 0.10624086 0.15949408 0.05382194 0.09843173
+ 0.10624086 0.15949408 0.05382194 0.09843173 0.10624086 0.15949408]
+not close tol = [0.00010013 0.00010006 0.00010005 0.00010003 0.00010013 0.00010006
+ 0.00010005 0.00010003 0.00010013 0.00010006 0.00010005 0.00010003]
+dtype = float32, shape = (3, 4)
+Mismatched elements: 12 / 12 (100%)
+First 5 mismatches are at indices:
+ [0, 0]: 0.17882193624973297 (ACTUAL), 0.125 (DESIRED)
+ [0, 1]: 0.04083172604441643 (ACTUAL), -0.0576 (DESIRED)
+ [0, 2]: -0.054940856993198395 (ACTUAL), 0.0513 (DESIRED)
+ [0, 3]: -0.18999408185482025 (ACTUAL), -0.0305 (DESIRED)
+ [1, 0]: 0.17882193624973297 (ACTUAL), 0.125 (DESIRED)
+Max absolute difference among violations: 0.15949408
+Max relative difference among violations: 5.22931416
+ ACTUAL: array([[ 0.178822,  0.040832, -0.054941, -0.189994],
+       [ 0.178822,  0.040832, -0.054941, -0.189994],
+       [ 0.178822,  0.040832, -0.054941, -0.189994]], dtype=float32)
+ DESIRED: array([[ 0.125 , -0.0576,  0.0513, -0.0305],
+       [ 0.125 , -0.0576,  0.0513, -0.0305],
+       [ 0.125 , -0.0576,  0.0513, -0.0305]])
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.615s
+
+FAILED (failures=1, errors=3, skipped=3)
+

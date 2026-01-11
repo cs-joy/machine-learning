@@ -63,7 +63,7 @@ class LinearBlock(tf.keras.layers.Layer):
                 trainable = True,
                 )
         self.b = self.add_weight(
-                shape = (self.units),
+                shape = (self.units,),
                 initializer = 'zeros',
                 trainable = True,
                 )
@@ -84,7 +84,7 @@ def get_model(dim):
     """
     model = tf.keras.Sequential([
         tf.keras.layers.Dense(64, activation='relu', input_shape=[dim]),
-        tf.keras.layers.Dese(32, activation='relu'),
+        tf.keras.layers.Dense(32, activation='relu'),
         tf.keras.layers.Dense(1),
         ])
     model.summary(print_fn=logging.info)
